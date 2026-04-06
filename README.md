@@ -39,6 +39,7 @@ This design enables efficient aggregation and filtering for business-level metri
 
 ## Star Schema
 
+```text
        dim_customers
 +--------------------------+
 | customer_unique_id (PK)  |
@@ -64,6 +65,7 @@ This design enables efficient aggregation and filtering for business-level metri
 | order_estimated_delivery_date |
 | delivery_days                 |
 +-------------------------------+
+```
 
 The data model follows a star schema design with `fct_orders` as the central fact table and `dim_customers` as a supporting dimension. For analytical efficiency, selected customer attributes were denormalized into the fact table.
 
@@ -74,7 +76,7 @@ The primary analytical table combining order and customer data, key fields inclu
 - order_id (primary key)
 - customer_id
 - order_purchase_timestamp
-- delivery timestamps (calculated using delivered orders only)
+- order_delivered_customer_date
 - delivery_days (calculated using delivered orders only)
 - customer state
 
