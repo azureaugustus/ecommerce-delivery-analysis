@@ -78,7 +78,7 @@ The primary analytical table combining order and customer data, key fields inclu
 - order_purchase_timestamp
 - order_delivered_customer_date
 - delivery_days (calculated using delivered orders only)
-- customer state
+- customer_state
 
 This table was designed to support aggregation and filtering for business analysis.
 
@@ -108,7 +108,7 @@ Delivery times show early volatility due to low initial order volume, then stabi
 ## How to Run
 
 1. Execute Python notebooks to generate cleaned datasets
-2. Export final dataset (`fct_orders.csv`)
+2. Generate or use the cleaned final dataset (`fct_orders.csv`)
 3. Import into PostgreSQL
 4. Run queries from `analysis.sql`
 
